@@ -31,29 +31,29 @@ def on_closing(event = None):
 top = tkinter.Tk()
 top.title("IFChat V0.0.1a")
 
-top.configure(bg="Black")
+top.configure(bg="#ffff99")
 
 messages_frame = tkinter.Frame(top)
 my_msg = tkinter.StringVar()  # Para poder enviar as mensagens
 my_msg.set("Digite sua mensagem aqui.")
 scrollbar = tkinter.Scrollbar(messages_frame)  # Para ver as mensagens anteriores
-scrollbar.configure(bg="Black")
+scrollbar.configure(bg="#ffff99")
 
 # Abaixo armazenará as mensagens
 
 msg_list = tkinter.Listbox(messages_frame, height = 15, width = 60, yscrollcommand = scrollbar.set)
 scrollbar.pack(side = tkinter.RIGHT, fill = tkinter.Y)
 msg_list.pack(side = tkinter.LEFT, fill = tkinter.BOTH)
-msg_list.configure(bg="Black", fg="Green", highlightbackground="#0d0d0d")
+msg_list.configure(bg="#ffff99", fg="#0000cc", highlightbackground="#666699")
 msg_list.pack()
 messages_frame.pack()
 
 entry_field = tkinter.Entry(top, textvariable = my_msg)
 entry_field.bind("<Return>", send)
-entry_field.configure(bg="Black", fg="Green", relief="ridge", highlightbackground="Black")
+entry_field.configure(bg="#ffff99", fg="#0000cc", relief="ridge", highlightbackground="#666699")
 entry_field.pack()
 send_button = tkinter.Button(top, text = "Enviar", command = send)
-send_button.configure(bg="Black", fg="Green", relief="raised", highlightbackground="Black")
+send_button.configure(bg="#ffff99", fg="#0000cc", relief="raised", highlightbackground="#666699")
 send_button.pack()
 
 top.protocol("WM_DELETE_WINDOW", on_closing)
